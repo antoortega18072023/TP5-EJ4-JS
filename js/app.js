@@ -18,3 +18,14 @@ let mes = fecha.toLocaleString('es', { month: 'long'});
 let anio = fecha.toLocaleString('es', { year: 'numeric'});
 let fechaCompleta = `${primerLetraMayuscula(nombreDia)} ${diaMes} de ${primerLetraMayuscula(mes)} del ${anio}`
 dia.innerText = fechaCompleta
+
+const verHora = () => {
+    //  Objeto fecha (hora-minutos-segundos)
+    let hora = new Date()
+    let horas = hora.toLocaleString('es', {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true})
+    
+    const horaCompleta = `${horas}`
+    parrafoHora.innerText = horaCompleta
+  }
+  
+  setInterval(verHora, 1000)
